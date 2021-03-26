@@ -4,14 +4,30 @@ server:
 #dubbo配置
 dubbo:
   application:
-    id: dubbo
-    name: dubbo
+    id: dubbo-platform-provider
+    #当前服务/应用的名字
+    name: dubbo-platform-provider
   scan:
     # 包名根据自己的实际情况写
-    base-packages: com.fengzi.dubbo.user
+    base-packages: com.fengzi.dubbo.platform
   protocol:
     port: 20770
     name: dubbo
   registry:
     #zookeeper注册中心地址
     address: zookeeper://127.0.0.1:2181
+  metadata-report:
+    address: ${dubbo.registry.address}
+  config-center:
+    address: ${dubbo.registry.address}
+  consumer:
+    #过期时间
+    timeout: 30000
+    #服务分组
+    group: dubbo
+    check: false
+  provider:
+    #过期时间
+    timeout: 30000
+    #服务分组
+    group: dubbo

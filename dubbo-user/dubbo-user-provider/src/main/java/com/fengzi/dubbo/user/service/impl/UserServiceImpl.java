@@ -18,6 +18,7 @@ public class UserServiceImpl implements UserService {
         UserVo vo = new UserVo();
         vo.setUserId("1");
         vo.setUserName("姓名");
+        System.err.println("------接受到请求-------");
         return vo;
     }
 }
