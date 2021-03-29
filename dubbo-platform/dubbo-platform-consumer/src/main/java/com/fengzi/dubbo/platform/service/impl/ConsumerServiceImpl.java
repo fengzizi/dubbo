@@ -3,7 +3,7 @@ package com.fengzi.dubbo.platform.service.impl;
 import com.fengzi.dubbo.platform.service.ConsumerService;
 import com.fengzi.dubbo.user.service.UserService;
 import com.fengzi.dubbo.user.vo.UserVo;
-import org.apache.dubbo.config.annotation.Reference;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ConsumerServiceImpl implements ConsumerService {
 
-    @Reference
+    @DubboReference
     private UserService userService;
 
     @Override

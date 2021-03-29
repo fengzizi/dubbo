@@ -2,14 +2,14 @@ package com.fengzi.dubbo.user.service.impl;
 
 import com.fengzi.dubbo.user.service.UserService;
 import com.fengzi.dubbo.user.vo.UserVo;
-import org.apache.dubbo.config.annotation.Service;
+import org.apache.dubbo.config.annotation.DubboService;
 
 /**
  * @author fujian
  * @version 1.0
  * @date 2021/03/26
  */
-@Service
+@DubboService
 public class UserServiceImpl implements UserService {
 
 
