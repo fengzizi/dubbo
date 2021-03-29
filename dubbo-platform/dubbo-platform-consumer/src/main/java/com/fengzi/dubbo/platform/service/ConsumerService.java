@@ -9,5 +9,5 @@ import com.fengzi.dubbo.user.vo.UserVo;
  */
 public interface ConsumerService {
 
-    UserVo findUserById(String message);
+    UserVo findUserById(String id);
 }

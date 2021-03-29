@@ -13,11 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class HelloDubboController {
+
     @Autowired
     ConsumerService consumerService;
 
     @GetMapping("/findUserById")
-    public UserVo findUserById(String name) {
-        return consumerService.findUserById(name);
+    public UserVo findUserById(String id) {
+        return consumerService.findUserById(id);
     }
 }

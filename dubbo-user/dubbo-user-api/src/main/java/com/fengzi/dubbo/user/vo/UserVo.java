@@ -22,4 +22,9 @@ public class UserVo implements Serializable {
      * 用户中文名
      */
     private String userName;
+
+    /**
+     * 用户IP
+     */
+    private String ip;
 }

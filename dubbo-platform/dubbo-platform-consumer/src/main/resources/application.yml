@@ -11,10 +11,10 @@ dubbo:
     # 包名根据自己的实际情况写
     base-packages: com.fengzi.dubbo.platform
   protocol:
-    port: 20771
+    port: 20773
     name: dubbo
   registry:
-    address: zookeeper://127.0.0.1:2181
+    address: zookeeper://8.136.176.62:2181
   consumer:
     #过期时间
     timeout: 30000

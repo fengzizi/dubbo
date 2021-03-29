@@ -11,8 +11,8 @@ public interface UserService {
     /**
      * 查询用户信息
      *
-     * @param userId
-     * @return
+     * @param id 用户ID
+     * @return UserVo
      */
-    UserVo findUserById(String userId);
+    UserVo findUserById(String id);
 }

@@ -18,7 +18,7 @@ public class ConsumerServiceImpl implements ConsumerService {
     private UserService userService;
 
     @Override
-    public UserVo findUserById(String message) {
-        return userService.findUserById(message);
+    public UserVo findUserById(String id) {
+        return userService.findUserById(id);
     }
 }
