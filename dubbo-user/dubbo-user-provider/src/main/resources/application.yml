@@ -14,9 +14,20 @@ dubbo:
     port: 20771
     name: dubbo
   registry:
-    address: zookeeper://8.136.176.62:2181
+    address: nacos://127.0.0.1:8848
   provider:
     #过期时间
     timeout: 30000
     #服务分组
     group: dubbo
+nacos:
+  config:
+    bootstrap:
+      enable: true
+    server-addr: 127.0.0.1:8848
+    namespace: dev
+    data-ids: redis.yaml
+    type: yaml
+    auto-refresh: true
+    username: nacos
+    password: nacos
