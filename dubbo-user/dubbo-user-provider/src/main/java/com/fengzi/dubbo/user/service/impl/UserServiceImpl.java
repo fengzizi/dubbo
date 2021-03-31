@@ -1,14 +1,12 @@
 package com.fengzi.dubbo.user.service.impl;
 
-import com.alibaba.nacos.api.config.ConfigType;
-import com.alibaba.nacos.api.config.annotation.NacosConfigListener;
 import com.alibaba.nacos.api.config.annotation.NacosValue;
-import com.alibaba.nacos.spring.context.annotation.config.NacosPropertySource;
 import com.fengzi.dubbo.user.service.UserService;
 import com.fengzi.dubbo.user.vo.UserVo;
 import org.apache.dubbo.config.annotation.DubboService;
-import org.springframework.stereotype.Component;
+import org.springframework.core.env.Environment;
 
+import javax.annotation.Resource;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -20,6 +18,9 @@ import java.net.UnknownHostException;
 @DubboService
 public class UserServiceImpl implements UserService {
 
+    /**
+     * 实时获取
+     */
     @NacosValue(value = "${spring.redis.database}", autoRefreshed = true)
     private Integer redisDatabase;
 
@@ -29,11 +30,19 @@ public class UserServiceImpl implements UserService {
     @NacosValue(value = "${spring.redis.port}", autoRefreshed = true)
     private Integer redisPort;
 
+    /**
+     * 实时获取
+     */
+    @Resource
+    private Environment env;
+
     @Override
     public UserVo findUserById(String id) {
         UserVo vo = new UserVo();
         vo.setUserId(id);
         vo.setUserName("redisDatabase=" + redisDatabase + ",redisHost=" + redisHost + ",redisPort=" + redisPort);
+        System.err.println("spring.redis.host=" + env.getProperty("spring.redis.host"));
+
         InetAddress address;
         try {
             address = InetAddress.getLocalHost();
@@ -44,13 +53,5 @@ public class UserServiceImpl implements UserService {
         return vo;
     }
 
-    @Component
-    @NacosPropertySource(dataId = "redis.yaml", autoRefreshed = true, type = ConfigType.YAML)
-    public class NacosListener {
 
-        @NacosConfigListener(dataId = "redis.yaml")
-        public void onMessage(String msg) {
-            System.out.println(msg);
-        }
-    }
 }
