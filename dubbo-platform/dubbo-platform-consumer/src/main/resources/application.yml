@@ -26,6 +26,14 @@ dubbo:
     timeout: 30000
     #服务分组
     group: dubbo
+
+spring:
+  elasticsearch:
+    rest:
+      uris: http://localhost:9200
+#      username: elastic
+#      password: 123456
+
 nacos:
   config:
     bootstrap:
