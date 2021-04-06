@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fengzi.dubbo.platform.mapper.UserMapper">
+
+    <resultMap type="com.fengzi.dubbo.platform.entity.User" id="mUser" autoMapping="true">
+    </resultMap>
+    <resultMap type="com.fengzi.dubbo.platform.entity.User" id="mUserAll">
+        <id column="id" property="id"/>
+        <result column="user_icon" property="userIcon"/>
+        <result column="open_id" property="openId"/>
+        <result column="nick_name" property="nickName"/>
+        <result column="bind_phone" property="bindPhone"/>
+        <result column="last_login_time" property="lastLoginTime"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="channel_id" property="channelId"/>
+        <result column="pay_pwd" property="payPwd"/>
+        <result column="balance" property="balance"/>
+        <result column="blocked_balance" property="blockedBalance"/>
+        <result column="free_quota" property="freeQuota"/>
+        <result column="state" property="state"/>
+    </resultMap>
+
+    <sql id="mColumnsSql">
+        id AS id,
+        user_icon AS userIcon,
+        open_id AS openId,
+        nick_name AS nickName,
+        bind_phone AS bindPhone,
+        last_login_time AS lastLoginTime,
+        create_time AS createTime,
+        update_time AS updateTime,
+        channel_id AS channelId,
+        pay_pwd AS payPwd,
+        balance AS balance,
+        blocked_balance AS blockedBalance,
+        free_quota AS freeQuota,
+        state AS state
+    </sql>
+</mapper>
