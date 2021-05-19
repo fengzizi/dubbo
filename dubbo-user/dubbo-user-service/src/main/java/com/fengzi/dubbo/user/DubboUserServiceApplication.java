@@ -8,10 +8,10 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 @EnableDubbo
 @SpringBootApplication(scanBasePackages = "com.fengzi")
 @EnableElasticsearchRepositories(basePackages = {"com.fengzi"})
-public class DubboUserProviderApplication {
+public class DubboUserServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DubboUserProviderApplication.class, args);
+        SpringApplication.run(DubboUserServiceApplication.class, args);
     }
 
 }

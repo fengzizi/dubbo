@@ -11,10 +11,10 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 @SpringBootApplication(scanBasePackages = {"com.fengzi"},exclude = SecurityAutoConfiguration.class)
 @EnableElasticsearchRepositories(basePackages = {"com.fengzi"})
 @MapperScan({"com.baomidou.mybatisplus.samples.quickstart.mapper","com.fengzi.dubbo.platform.mapper"})
-public class PlatformApplication {
+public class DubboPlatformServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PlatformApplication.class, args);
+        SpringApplication.run(DubboPlatformServiceApplication.class, args);
     }
 
 }
