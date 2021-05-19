@@ -4,9 +4,9 @@ server:
 #dubbo配置
 dubbo:
   application:
-    id: dubbo-user-provider
+    id: dubbo-user-service
     #当前服务/应用的名字
-    name: dubbo-user-provider
+    name: dubbo-user-service
   scan:
     # 包名根据自己的实际情况写
     base-packages: com.fengzi.dubbo.user

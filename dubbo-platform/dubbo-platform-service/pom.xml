@@ -7,9 +7,9 @@
         <artifactId>dubbo-platform</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>dubbo-platform-consumer</artifactId>
+    <artifactId>dubbo-platform-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>dubbo-platform-consumer</name>
+    <name>dubbo-platform-service</name>
     <packaging>jar</packaging>
 
     <description>Demo project for Spring Boot</description>
@@ -38,7 +38,18 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-        
+
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-spring-boot-starter-basic</artifactId>
+            <version>6.0.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>mybatis</artifactId>
+                    <groupId>org.mybatis</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
     </dependencies>
 
     <build>

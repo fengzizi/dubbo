@@ -14,8 +14,7 @@
     <description>Demo project for Spring Boot</description>
     <modules>
         <module>dubbo-platform-api</module>
-        <module>dubbo-platform-provider</module>
-        <module>dubbo-platform-consumer</module>
+        <module>dubbo-platform-service</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

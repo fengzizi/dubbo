@@ -4,9 +4,9 @@ server:
 #dubbo配置
 dubbo:
   application:
-    id: dubbo-platform-consumer
+    id: dubbo-platform-service
     #当前服务/应用的名字
-    name: dubbo-platform-consumer
+    name: dubbo-platform-service
   scan:
     # 包名根据自己的实际情况写
     base-packages: com.fengzi.dubbo.platform
@@ -41,9 +41,9 @@ spring:
       # 否则报错：Loading class `com.mysql.jdbc.Driver'. This is deprecated.
       driver-class-name: com.mysql.cj.jdbc.Driver
       #基本属性
-      url: jdbc:mysql://127.0.0.1:3306/marketing?charset=utf8mb4&useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+      url: jdbc:mysql://127.0.0.1:3306/dubbo?charset=utf8mb4&useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
       username: root
-      password: 123
+      password: qa@asr
       #配置初始化大小/最小/最大[仅用于测试，生成环境需要修改哦]
       initial-size: 5
       min-idle: 5
@@ -77,6 +77,11 @@ spring:
         reset-enable: true
         login-username: admin
         login-password: admin
+  activiti:
+    #首次启动时需设置为true 去构建表
+    database-schema-update: false
+    #暂时不检查流程文件
+    check-process-definitions: false
 nacos:
   config:
     bootstrap:
@@ -88,3 +93,5 @@ nacos:
     auto-refresh: true
 mybatis-plus:
   mapper-locations: classpath*:/com/fengzi/dubbo/*/mapper/xml/*.xml
+
+

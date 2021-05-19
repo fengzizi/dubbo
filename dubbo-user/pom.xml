@@ -15,7 +15,7 @@
 
     <modules>
         <module>dubbo-user-api</module>
-        <module>dubbo-user-provider</module>
+        <module>dubbo-user-service</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
