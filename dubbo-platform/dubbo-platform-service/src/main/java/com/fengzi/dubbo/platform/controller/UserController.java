@@ -4,12 +4,13 @@ import com.fengzi.dubbo.common.commons.JsonResp;
 import com.fengzi.dubbo.platform.entity.User;
 import com.fengzi.dubbo.platform.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * UserController
@@ -25,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 public class UserController {
 
-    @Autowired
+    @Resource
     private UserService userService;
 
     /**
