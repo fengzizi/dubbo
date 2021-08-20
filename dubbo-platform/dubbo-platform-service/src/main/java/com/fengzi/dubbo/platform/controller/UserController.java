@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "/api/user")
-@Transactional
+@Transactional(rollbackFor = Exception.class)
 @Slf4j
 @CrossOrigin
 public class UserController {
@@ -31,11 +31,11 @@ public class UserController {
     /**
      * 添加用户信息
      *
-     * @param user
+     * @param user 用户信息
      * @return 返回值JsonResp
      */
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public JsonResp addUser(User user) {
+    public JsonResp<User> addUser(User user) {
         log.debug("添加用户信息");
         userService.save(user);
         return JsonResp.ok(user);
@@ -48,7 +48,7 @@ public class UserController {
      * @return 返回值JsonResp
      */
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public JsonResp updateUser(User user) {
+    public JsonResp<User> updateUser(User user) {
         log.debug("修改用户信息");
         userService.updateById(user);
         return JsonResp.ok(user);
@@ -61,7 +61,7 @@ public class UserController {
      * @return 返回值JsonResp
      */
     @RequestMapping(value = "/selectOne")
-    public JsonResp selectUser(Long id) {
+    public JsonResp<User> selectUser(Long id) {
         log.debug("查找用户信息");
         User user = userService.getById(id);
         return JsonResp.ok(user);
