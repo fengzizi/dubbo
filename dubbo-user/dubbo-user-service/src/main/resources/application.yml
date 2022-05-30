@@ -1,4 +1,4 @@
-#用户中心服务端口
+#用户中心提供者
 server:
   port: 8080
 #dubbo配置
@@ -14,7 +14,8 @@ dubbo:
     port: 20771
     name: dubbo
   registry:
-    address: nacos://127.0.0.1:8848
+    #服务监控信息通过dubbo-admin查看
+    address: zookeeper://127.0.0.1:2181
   provider:
     #过期时间
     timeout: 30000

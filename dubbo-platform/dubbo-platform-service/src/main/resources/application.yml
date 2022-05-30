@@ -1,4 +1,4 @@
-#用户中心服务端口
+#消费者
 server:
   port: 8082
 #dubbo配置
@@ -14,7 +14,8 @@ dubbo:
     port: 20773
     name: dubbo
   registry:
-    address: nacos://127.0.0.1:8848
+    #服务监控信息通过dubbo-admin查看
+    address: zookeeper://127.0.0.1:2181
   consumer:
     #过期时间
     timeout: 30000
@@ -31,8 +32,8 @@ spring:
   elasticsearch:
     rest:
       uris: http://localhost:9200
-#      username: elastic
-#      password: 123456
+  #      username: elastic
+  #      password: 123456
 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
